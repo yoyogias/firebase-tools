@@ -34,13 +34,17 @@ async function runScript(script: string): Promise<void> {
 
   logger.debug(`Running ${script} with environment ${JSON.stringify(env)}`);
 
-  proc.stdout.on("data", (data) => {
-    process.stdout.write(data.toString());
-  });
+  if (proc.stdout) {
+    proc.stdout.on("data", (data) => {
+      process.stdout.write(data.toString());
+    });
+  }
 
-  proc.stderr.on("data", (data) => {
-    process.stderr.write(data.toString());
-  });
+  if (proc.stderr) {
+    proc.stderr.on("data", (data) => {
+      process.stderr.write(data.toString());
+    });
+  }
 
   return new Promise((resolve, reject) => {
     proc.on("error", (err: any) => {

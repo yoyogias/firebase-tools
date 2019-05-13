@@ -13,6 +13,7 @@ import * as track from "../track";
 import { Constants } from "./constants";
 import { EmulatorInfo, EmulatorInstance, EmulatorLog, Emulators } from "./types";
 import * as chokidar from "chokidar";
+import * as FirebaseError from "../error";
 
 import * as spawn from "cross-spawn";
 import { spawnSync } from "child_process";
@@ -543,6 +544,13 @@ export function InvokeRuntime(
     ],
     { env: { node: nodeBinary, ...opts.env, ...process.env }, cwd: frb.cwd }
   );
+
+  if (!runtime.stderr) {
+    throw new FirebaseError("WHY NO STDERR");
+  }
+  if (!runtime.stdout) {
+    throw new FirebaseError("WHY NO STDOUT");
+  }
 
   const buffers: {
     [pipe: string]: {

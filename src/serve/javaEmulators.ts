@@ -109,12 +109,16 @@ async function _runBinary(
 
     utils.logLabeledBullet(emulator.name, `Logging to ${clc.bold(_getLogFileName(emulator.name))}`);
 
-    emulator.instance.stdout.on("data", (data) => {
-      logger.debug(data.toString());
-    });
-    emulator.instance.stderr.on("data", (data) => {
-      logger.debug(data.toString());
-    });
+    if (emulator.instance.stdout) {
+      emulator.instance.stdout.on("data", (data) => {
+        logger.debug(data.toString());
+      });
+    }
+    if (emulator.instance.stderr) {
+      emulator.instance.stderr.on("data", (data) => {
+        logger.debug(data.toString());
+      });
+    }
 
     emulator.instance.on("error", (err: any) => {
       if (err.path === "java" && err.code === "ENOENT") {
