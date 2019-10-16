@@ -46,7 +46,6 @@ module.exports = {
                     "@typescript-eslint/no-var-requires": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/prefer-includes": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/prefer-regexp-exec": "warn", // TODO(bkendall): remove, allow to error.
-                    "@typescript-eslint/prefer-string-starts-ends-with": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/require-await": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/unbound-method": "warn", // TODO(bkendall): remove, allow to error.
                 },

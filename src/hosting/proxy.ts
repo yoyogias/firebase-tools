@@ -41,7 +41,7 @@ export function proxyRequestHandler(url: string, rewriteIdentifier: string): Req
     // functions cookie is not a string[].
     const cookie = (req.headers.cookie as string) || "";
     const sessionCookie = cookie.split(/; ?/).find((c: string) => {
-      return c.trim().indexOf("__session=") === 0;
+      return c.trim().startsWith("__session=");
     });
 
     const proxied = request({
