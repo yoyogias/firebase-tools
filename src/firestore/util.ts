@@ -26,7 +26,7 @@ export function parseIndexName(name?: string): IndexName {
     throw new FirebaseError(`Cannot parse undefined index name.`);
   }
 
-  const m = name.match(INDEX_NAME_REGEX);
+  const m = INDEX_NAME_REGEX.exec(name);
   if (!m || m.length < 4) {
     throw new FirebaseError(`Error parsing index name: ${name}`);
   }
@@ -42,7 +42,7 @@ export function parseIndexName(name?: string): IndexName {
  * Parse an Field name into useful pieces.
  */
 export function parseFieldName(name: string): FieldName {
-  const m = name.match(FIELD_NAME_REGEX);
+  const m = FIELD_NAME_REGEX.exec(name);
   if (!m || m.length < 4) {
     throw new FirebaseError(`Error parsing field name: ${name}`);
   }

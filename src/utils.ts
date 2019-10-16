@@ -175,19 +175,19 @@ export function getFunctionsEventProvider(eventType: string): string {
     return _.capitalize(provider);
   }
   // New event types:
-  if (eventType.match(/google.pubsub/)) {
+  if (/google.pubsub/.exec(eventType)) {
     return "PubSub";
-  } else if (eventType.match(/google.storage/)) {
+  } else if (/google.storage/.exec(eventType)) {
     return "Storage";
-  } else if (eventType.match(/google.analytics/)) {
+  } else if (/google.analytics/.exec(eventType)) {
     return "Analytics";
-  } else if (eventType.match(/google.firebase.database/)) {
+  } else if (/google.firebase.database/.exec(eventType)) {
     return "Database";
-  } else if (eventType.match(/google.firebase.auth/)) {
+  } else if (/google.firebase.auth/.exec(eventType)) {
     return "Auth";
-  } else if (eventType.match(/google.firebase.crashlytics/)) {
+  } else if (/google.firebase.crashlytics/.exec(eventType)) {
     return "Crashlytics";
-  } else if (eventType.match(/google.firestore/)) {
+  } else if (/google.firestore/.exec(eventType)) {
     return "Firestore";
   }
   return _.capitalize(eventType.split(".")[1]);
