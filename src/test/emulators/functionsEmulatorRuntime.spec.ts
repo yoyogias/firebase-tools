@@ -281,7 +281,7 @@ describe("FunctionsEmulator-Runtime", () => {
       }).timeout(TIMEOUT_MED);
 
       it("should expose Firestore prod when the emulator is not running", async () => {
-        const frb = _.cloneDeep(FunctionRuntimeBundles.onRequest) as FunctionsRuntimeBundle;
+        const frb = _.cloneDeep(FunctionRuntimeBundles.onRequest);
         frb.ports = {};
 
         const runtime = InvokeRuntimeWithFunctions(frb, () => {
@@ -304,7 +304,7 @@ describe("FunctionsEmulator-Runtime", () => {
       }).timeout(TIMEOUT_MED);
 
       it("should expose a stubbed Firestore when the emulator is running", async () => {
-        const frb = _.cloneDeep(FunctionRuntimeBundles.onRequest) as FunctionsRuntimeBundle;
+        const frb = _.cloneDeep(FunctionRuntimeBundles.onRequest);
         frb.ports = {
           firestore: 9090,
         };
@@ -329,7 +329,7 @@ describe("FunctionsEmulator-Runtime", () => {
       }).timeout(TIMEOUT_MED);
 
       it("should expose RTDB prod when the emulator is not running", async () => {
-        const frb = _.cloneDeep(FunctionRuntimeBundles.onRequest) as FunctionsRuntimeBundle;
+        const frb = _.cloneDeep(FunctionRuntimeBundles.onRequest);
         frb.ports = {};
 
         const runtime = InvokeRuntimeWithFunctions(frb, () => {
@@ -354,7 +354,7 @@ describe("FunctionsEmulator-Runtime", () => {
       }).timeout(TIMEOUT_MED);
 
       it("should expose a stubbed RTDB when the emulator is running", async () => {
-        const frb = _.cloneDeep(FunctionRuntimeBundles.onRequest) as FunctionsRuntimeBundle;
+        const frb = _.cloneDeep(FunctionRuntimeBundles.onRequest);
         frb.ports = {
           database: 9090,
         };
