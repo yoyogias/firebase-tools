@@ -39,7 +39,6 @@ module.exports = {
             "rules": Object.assign(
                 {
                     "@typescript-eslint/await-thenable": "warn", // TODO(bkendall): remove, allow to error.
-                    "@typescript-eslint/ban-types": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/camelcase": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/no-inferrable-types": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/no-misused-promises": "warn", // TODO(bkendall): remove, allow to error.

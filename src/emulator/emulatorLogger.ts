@@ -29,7 +29,7 @@ export enum Verbosity {
 
 export class EmulatorLogger {
   static verbosity: Verbosity = Verbosity.DEBUG;
-  static warnOnceCache = new Set<String>();
+  static warnOnceCache = new Set<string>();
 
   /**
    * Within this file, utils.logFoo() or logger.Foo() should not be called directly,
