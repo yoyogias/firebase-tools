@@ -43,7 +43,6 @@ module.exports = {
                     "@typescript-eslint/no-inferrable-types": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/no-misused-promises": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/no-use-before-define": "warn", // TODO(bkendall): remove, allow to error.
-                    "@typescript-eslint/no-use-before-define": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/no-var-requires": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/prefer-includes": "warn", // TODO(bkendall): remove, allow to error.
                     "@typescript-eslint/prefer-regexp-exec": "warn", // TODO(bkendall): remove, allow to error.
